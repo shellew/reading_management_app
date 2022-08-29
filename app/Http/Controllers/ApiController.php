@@ -23,7 +23,7 @@ class ApiController extends Controller
         $book_master->save();
 
         return response()->json([
-            "message" => "student record created"
+            "message" => "book record created"
         ], 201);
       }
     

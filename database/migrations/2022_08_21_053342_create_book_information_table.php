@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('book_masters', function (Blueprint $table) {
+        Schema::create('book_information', function (Blueprint $table) {
             $table->bigincrements('id');
             $table->foreignId('user_id');
             $table->string('title');

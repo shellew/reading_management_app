@@ -18,8 +18,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/book_master/', [ ApiController::class, 'getAllBooks'] );
-Route::get('/book_master/{id}', [ ApiController::class, 'getBook'] );
-Route::post('/book_master/', [ ApiController::class, 'createBook'] );
-Route::put('/book_master/{id}', [ ApiController::class, 'updateBook'] );
-Route::delete('/book_master/{id}', [ ApiController::class, 'deleteBook'] );
+Route::get('/book_masters/', [ ApiController::class, 'getAllBooks'] );
+Route::get('/book_masters/{id}', [ ApiController::class, 'getBook'] );
+Route::post('/book_masters/', [ ApiController::class, 'createBook'] );
+Route::put('/book_masters/{id}', [ ApiController::class, 'updateBook'] );
+Route::delete('/book_masters/{id}', [ ApiController::class, 'deleteBook'] );
