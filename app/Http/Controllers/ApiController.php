@@ -8,7 +8,8 @@ use App\Models\BookMaster;
 class ApiController extends Controller
 {
     public function getAllBooks() {
-        // logic to get all books goes here
+        $book_masters = BookMaster::get()->toJson(JSON_PRETTY_PRINT);
+        return response($book_masters, 200);
       }
     
       public function createBook(Request $request) {
