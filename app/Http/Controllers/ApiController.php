@@ -8,7 +8,9 @@ use App\Models\BookMaster;
 class ApiController extends Controller
 {
     public function getAllBooks() {
-        $book_masters = BookMaster::get()->toJson(JSON_PRETTY_PRINT);
+        $testUser = $user_id;
+        
+        $book_masters = BookMaster::get($testUser)->toJson(JSON_PRETTY_PRINT);
         return response($book_masters, 200);
       }
     
@@ -28,9 +30,9 @@ class ApiController extends Controller
         ], 201);
       }
     
-      public function getBook($id) {
-        if(BookMaster::where('id', $id)->exists()) {
-          $book_master = BookMaster::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
+      public function getBook($user_id) {
+        if(BookMaster::where('user_id', $user_id)->exists()) {
+          $book_master = BookMaster::where('user_id', $user_id)->get()->toJson(JSON_PRETTY_PRINT);
           return response($book_master, 200);
         } else {
           return response()->json([
