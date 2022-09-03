@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\ReadTimeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +20,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// ApiController
 Route::get('/book_masters/', [ ApiController::class, 'getAllBooks'] );
 Route::get('/book_masters/{id}', [ ApiController::class, 'getBook'] );
 Route::post('/book_masters/', [ ApiController::class, 'createBook'] );
 Route::put('/book_masters/{id}', [ ApiController::class, 'updateBook'] );
 Route::delete('/book_masters/{id}', [ ApiController::class, 'deleteBook'] );
+
+// ReadTimeController
+Route::post('/read_times/', [ ReadTimeController::class, 'createReadTime']);

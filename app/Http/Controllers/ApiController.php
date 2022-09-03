@@ -18,7 +18,7 @@ class ApiController extends Controller
     
       public function getAllBooks() {
         $user_id = 'user_id';
-
+        $user_id = 2;
         if (BookMaster::where('user_id', $user_id)->exists()) {
           $book_masters = BookMaster::where('user_id', $user_id)->get()->toJson(JSON_PRETTY_PRINT);
           return response($book_masters, 200);
