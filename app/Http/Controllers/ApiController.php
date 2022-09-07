@@ -36,7 +36,7 @@ class ApiController extends Controller
         $book_master->author = $request->author;
         $book_master->isbn = $request->isbn;
         $book_master->register_date = $request->register_date;
-        $book_master->comment = $request->comment;
+        $book_master->memo = $request->memo;
         $book_master->status = $request->status;
         $book_master->save();
 
@@ -56,6 +56,14 @@ class ApiController extends Controller
         }
       }
     
+      // BookMasterのレコードを確認し、存在していなければ値を新規登録し、存在していれば値を更新する関数
+      //   引数:$id
+      //   返り値:レスポンスをjson形式にして記入し、レコードが存在していればメッセージと200を返し、存在していなければメッセージと404を返す
+           
+          //  ①idが存在すれば、BookMaster::find($id)を実行しモデルの値($id)を返す
+          // ②リクエストを受け取ると、user_id、title、author、isbn、register_date、memo、statusがnullかどうかチェックする。
+          // nullの場合は、データベースのレコードを既存の値に置き換える。nullでない場合はnullが新い値として渡される。
+
       public function updateBook(Request $request, $id) {
         if(BookMaster::where('id', $id)->exists()) {
           $book_master = BookMaster::find($id);
@@ -64,7 +72,7 @@ class ApiController extends Controller
           $book_master->author = is_null($request->author) ? $book_master->author : $request->author;
           $book_master->isbn = is_null($request->isbn) ? $book_master->isbn : $request->isbn;
           $book_master->register_date = is_null($request->register_date) ? $book_master->register_date : $request->register_date;
-          $book_master->comment = is_null($request->comment) ? $book_master->comment : $request->comment;
+          $book_master->memo = is_null($request->memo) ? $book_master->memo : $request->memo;
           $book_master->status = is_null($request->status) ? $book_master->status : $request->status;
           $book_master->save();
 
