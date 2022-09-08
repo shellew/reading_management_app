@@ -8,53 +8,59 @@ use App\Models\BookMaster;
 class ApiController extends Controller
 {
     // ユーザーが登録した本のデータを取得してリストで表示する関数
-      // 引数:$user_id
-      // 返り値:BookMasterから取得したデータをjson形式で返す
+    // 引数:$user_id
+    // 返り値:BookMasterから取得したデータをjson形式で返す
 
-      // ①引数($user_id)を定める
-      // ②引数にuser_idを代入する
-      // ③user_idが存在すれば、BookMasterモデルから書籍のデータを取得する
-      // ④json形式で取得したデータを返す
-    
-      public function getAllBooks() {
-        $user_id = 'user_id';
-        $user_id = 2;
-        if (BookMaster::where('user_id', $user_id)->exists()) {
-          $book_masters = BookMaster::where('user_id', $user_id)->get()->toJson(JSON_PRETTY_PRINT);
-          return response($book_masters, 200);
-        } else {
-          return response()->json([
-            "message" => 'ユーザーID not found'
-          ], 404);
-        }
-      }
-    
-      public function createBook(Request $request) {
-        $book_master = new BookMaster;
-        $book_master->user_id = $request->user_id;
-        $book_master->title = $request->title;
-        $book_master->author = $request->author;
-        $book_master->isbn = $request->isbn;
-        $book_master->register_date = $request->register_date;
-        $book_master->memo = $request->memo;
-        $book_master->status = $request->status;
-        $book_master->save();
+    // ①引数($user_id)を定める
+    // ②引数にuser_idを代入する
+    // ③user_idが存在すれば、BookMasterモデルから書籍のデータを取得する
+    // ④json形式で取得したデータを返す
+  
+    // public function getAllBooks() {
+    //   $user_id = 'user_id';
+    //   $user_id = 2;
+    public function getAllBooks(Request $request) {
+      // $user_id = $request->user_id;
 
+      // TODO: 一時的に仮の値を代入する
+      $user_id = 2;
+
+      if (BookMaster::where('user_id', $user_id)->exists()) {
+        $book_masters = BookMaster::where('user_id', $user_id)->get()->toJson(JSON_PRETTY_PRINT);
+        return response($book_masters, 200);
+      } else {
         return response()->json([
-            "message" => "book record created"
-        ], 201);
+          "message" => 'ユーザーID not found'
+        ], 404);
       }
+    }
     
-      public function getBook($id) {
-        if(BookMaster::where('id', $id)->exists()) {
-          $book_master = BookMaster::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
-          return response($book_master, 200);
-        } else {
-          return response()->json([
-            "message" => "Book not found"
-          ], 404);
-        }
+    public function createBook(Request $request) {
+      $book_master = new BookMaster;
+      $book_master->user_id = $request->user_id;
+      $book_master->title = $request->title;
+      $book_master->author = $request->author;
+      $book_master->isbn = $request->isbn;
+      $book_master->register_date = $request->register_date;
+      $book_master->memo = $request->memo;
+      $book_master->status = $request->status;
+      $book_master->save();
+
+      return response()->json([
+          "message" => "book record created"
+      ], 201);
+    }
+    
+    public function getBook($id) {
+      if(BookMaster::where('id', $id)->exists()) {
+        $book_master = BookMaster::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
+        return response($book_master, 200);
+      } else {
+        return response()->json([
+          "message" => "Book not found"
+        ], 404);
       }
+    }
     
       // BookMasterのレコードを確認し、存在していなければ値を新規登録し、存在していれば値を更新する関数
       //   引数:$id
