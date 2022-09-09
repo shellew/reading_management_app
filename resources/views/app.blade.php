@@ -1,36 +1,25 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+@section('content')
+    <div id="app">
+        <h1>Laravel + Vue.js</h1>
+        <h2>@{{ message }}</h2>
 
-    <title>{{ config('app.name', 'Vue Laravel SPA') }}</title>
+        <example-compnent></example-component>
+    </div>
 
-    <!-- Styles -->
-    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-<div id="app">
-  <header-component></header-component>
-  <example-component></example-component>
 
-  Book Data:@{{ message }}
+    <!-- Vueを読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        // import ExampleComponent from './components/ExampleComponent.vue'
+        const app = new Vue({
+          el:'#app',
+          data: {
+            message: 'Vue画面テスト'
+          }
+        });
+    </script>
 
-</div>
-<!-- Scripts -->
-<script src="{{ mix('/js/app.js') }}" defer></script>
-<script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        message: 'Hello Vue!'
-      }
-    })
-
-    app.mount('#app')
-</script>
-</body>
-</html>
+<example-compnent></example-component>
+@endsection

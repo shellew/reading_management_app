@@ -15,10 +15,8 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import HeaderComponent from "./components/HeaderComponent";
 import ExampleComponent from './components/ExampleComponent.vue';
 app.component('example-component', ExampleComponent);
-Vue.component('header-component', HeaderComponent);
 
 /**
  * The following block of code may be used to automatically register your
