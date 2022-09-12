@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/book', function() {
         return view('app');
     })->where('any', '.*');
+    
 
 // ログイン画面
 Auth::routes();

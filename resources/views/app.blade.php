@@ -5,7 +5,9 @@
         <header-component></header-component>
         <example-component></example-component>
 
-        <el-button>Default</el-button>
+        <sidebar></sidebar>
+
+        <scafold-vue></scafold-vue>
     </div>
 
 
