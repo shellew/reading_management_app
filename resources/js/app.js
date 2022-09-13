@@ -18,6 +18,16 @@ const app = createApp({});
 import ExampleComponent from './components/ExampleComponent.vue';
 app.component('example-component', ExampleComponent);
 
+import HeaderComponent from './components/HeaderComponent.vue';
+app.component('header-component', HeaderComponent);
+
+import Sidebar from './components/Sidebar.vue';
+app.component('sidebar', Sidebar);
+
+import Scafold from './components/Scafold.vue';
+app.component('scafold', Scafold);
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
