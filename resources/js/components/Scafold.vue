@@ -1,9 +1,10 @@
 <template>
-  <div class="common-layout">
-    <el-container>
-      <el-main>
-          Main
-      </el-main>
-    </el-container>
-  </div>
+    <div class="common-layout">
+        <el-container>
+            <sidebar></sidebar>
+            <el-main>
+                <slot>Main</slot>
+            </el-main>
+        </el-container>
+    </div>
 </template>
