@@ -27,6 +27,21 @@ app.component('sidebar', Sidebar);
 import Scafold from './components/Scafold.vue';
 app.component('scafold', Scafold);
 
+import BookInformationTable from './components/BookInformationTable.vue';
+app.component('book-information-table', BookInformationTable);
+
+import InfoInput from './components/InfoInput.vue';
+app.component('info-input', InfoInput);
+
+import StatusOptionItem from './components/StatusOptionItem.vue';
+app.component('status-option-item', StatusOptionItem);
+
+import CommentInputItem from './components/CommentInputItem.vue';
+app.component('comment-input-item', CommentInputItem);
+
+import ButtonItem from './components/ButtonItem.vue';
+app.component('button-item', ButtonItem);
+
 
 /**
  * The following block of code may be used to automatically register your
