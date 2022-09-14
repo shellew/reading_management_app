@@ -18,9 +18,10 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Vue.Router
-Route::get('/{any}', function() {
+Route::get('/book', function() {
         return view('app');
     })->where('any', '.*');
+    
 
 // ログイン画面
 Auth::routes();
