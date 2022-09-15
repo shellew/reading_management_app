@@ -1,5 +1,5 @@
 <template>
-    <el-row class="mb-4">
+    <el-row>
         <el-button>登録</el-button>
     </el-row>
 </template>

@@ -15,32 +15,42 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+// import ExampleComponent from './components/ExampleComponent.vue';
+// app.component('example-component', ExampleComponent);
 
-import HeaderComponent from './components/HeaderComponent.vue';
-app.component('header-component', HeaderComponent);
+// import HeaderComponent from './components/HeaderComponent.vue';
+// app.component('header-component', HeaderComponent);
 
+// サイドバー
 import Sidebar from './components/Sidebar.vue';
 app.component('sidebar', Sidebar);
 
+// ページレイアウト
 import Scafold from './components/Scafold.vue';
 app.component('scafold', Scafold);
 
-import BookInformationTable from './components/BookInformationTable.vue';
-app.component('book-information-table', BookInformationTable);
+// import BookInformationTable from './components/BookInformationTable.vue';
+// app.component('book-information-table', BookInformationTable);
 
+// 入力フォーム
 import InfoInput from './components/InfoInput.vue';
 app.component('info-input', InfoInput);
 
+// ステータス選択フォーム
 import StatusOptionItem from './components/StatusOptionItem.vue';
 app.component('status-option-item', StatusOptionItem);
 
+// メモ入力欄
 import CommentInputItem from './components/CommentInputItem.vue';
 app.component('comment-input-item', CommentInputItem);
 
+// 登録ボタン
 import ButtonItem from './components/ButtonItem.vue';
 app.component('button-item', ButtonItem);
+
+// 新規書籍登録ページ
+import RegistrationPage from './components/RegistrationPage.vue';
+app.component('registration-page', RegistrationPage);
 
 
 /**
