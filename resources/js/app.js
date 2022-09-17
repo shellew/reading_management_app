@@ -52,6 +52,13 @@ app.component('button-item', ButtonItem);
 import RegistrationPage from './components/RegistrationPage.vue';
 app.component('registration-page', RegistrationPage);
 
+// 書籍の画像を表示
+import BookImage from './components/BookImage.vue';
+app.component('book-image', BookImage);
+
+// 書籍一覧ページ
+import BookListPage from './components/BookListPage.vue';
+app.component('book-list-page', BookListPage);
 
 /**
  * The following block of code may be used to automatically register your

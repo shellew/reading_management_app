@@ -3,9 +3,8 @@
         <el-container>
             <sidebar></sidebar>
             <el-main>
-                <slot>
-                    <registration-page></registration-page>
-                </slot>
+                <registration-page></registration-page>
+                <book-list-page></book-list-page>
             </el-main>
         </el-container>
     </div>
