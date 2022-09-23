@@ -22,43 +22,43 @@ const app = createApp({});
 // app.component('header-component', HeaderComponent);
 
 // サイドバー
-import Sidebar from './components/Sidebar.vue';
-app.component('sidebar', Sidebar);
+// import Sidebar from './components/Sidebar.vue';
+// app.component('sidebar', Sidebar);
 
 // ページレイアウト
-import Scafold from './components/Scafold.vue';
-app.component('scafold', Scafold);
+// import Scafold from './components/Scafold.vue';
+// app.component('scafold', Scafold);
 
 // import BookInformationTable from './components/BookInformationTable.vue';
 // app.component('book-information-table', BookInformationTable);
 
 // 入力フォーム
-import InfoInput from './components/InfoInput.vue';
-app.component('info-input', InfoInput);
+// import InfoInput from './components/InfoInput.vue';
+// app.component('info-input', InfoInput);
 
 // ステータス選択フォーム
-import StatusOptionItem from './components/StatusOptionItem.vue';
-app.component('status-option-item', StatusOptionItem);
+// import StatusOptionItem from './components/StatusOptionItem.vue';
+// app.component('status-option-item', StatusOptionItem);
 
 // メモ入力欄
-import CommentInputItem from './components/CommentInputItem.vue';
-app.component('comment-input-item', CommentInputItem);
+// import CommentInputItem from './components/CommentInputItem.vue';
+// app.component('comment-input-item', CommentInputItem);
 
 // 登録ボタン
-import ButtonItem from './components/ButtonItem.vue';
-app.component('button-item', ButtonItem);
+// import ButtonItem from './components/ButtonItem.vue';
+// app.component('button-item', ButtonItem);
 
 // 新規書籍登録ページ
-import RegistrationPage from './components/RegistrationPage.vue';
-app.component('registration-page', RegistrationPage);
+// import RegistrationPage from './components/RegistrationPage.vue';
+// app.component('registration-page', RegistrationPage);
 
 // 書籍の画像を表示
-import BookImage from './components/BookImage.vue';
-app.component('book-image', BookImage);
+// import BookImage from './components/BookImage.vue';
+// app.component('book-image', BookImage);
 
 // 書籍一覧ページ
-import BookListPage from './components/BookListPage.vue';
-app.component('book-list-page', BookListPage);
+// import BookListPage from './components/BookListPage.vue';
+// app.component('book-list-page', BookListPage);
 
 /**
  * The following block of code may be used to automatically register your
