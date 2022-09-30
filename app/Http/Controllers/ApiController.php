@@ -50,16 +50,17 @@ class ApiController extends Controller
     
       // 変更前
       public function createBook(Request $request) {
-        $user_id = "user_id";  //変更①
+        // $user_id = "user_id";  //変更①
+        $book_master = BookMaster::find($user_id);
+        $cb = Carbon::now();
         $book_master = new BookMaster;
         // user_idをquery文字列から取得
         $book_master->user_id = $request->query("user_id");  //変更① または $book_master->user_id = $request->query($user_id); 
         $book_master->title = $request->title;
-        $book_master->author = $request->author;
-        $book_master->isbn = $request->isbn;
+        $book_master->author = is_null($request->author) ? $book_master->author : $request->author;
         //今日のデータを取得
-        $book_master->register_date = $request->now()->format('Y年m月d日');  //変更予定②
-        $book_master->memo = $request->memo;
+        $book_master->register_date = $request->$cb;  //変更予定②
+        $book_master->memo = is_null($request->memo) ? $book_master->memo : $request->memo;
         $book_master->status = $request->status;
         $book_master->save();
 
