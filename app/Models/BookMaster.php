@@ -11,5 +11,5 @@ class BookMaster extends Model
     
     protected $table = 'book_masters';
 
-    protected $fillable = ['title','author','isbn','register_date','comment','status','image','user_id'];
+    protected $fillable = ['title','author','register_date','memo','status','image','user_id'];
 }
