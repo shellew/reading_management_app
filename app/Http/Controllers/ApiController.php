@@ -43,7 +43,7 @@ class ApiController extends Controller
         $book_master->save();
 
         return response()->json([
-          "message" => "book recored created"
+            "message" => "book record created"
         ], 201);
       }
     
@@ -69,17 +69,17 @@ class ApiController extends Controller
           // ②リクエストを受け取ると、user_id、title、author、isbn、register_date、memo、statusがnullかどうかチェックする。
           // nullの場合は、データベースのレコードを既存の値に置き換える。nullでない場合はnullが新い値として渡される。
 
-      
+          
 
 
       public function updateBook(Request $request, $id) {
-          if(BookMaster::where('id', $id)->exists()) {
-            $book_master = BookMaster::find($id);
-            $book_master->title = is_null($request->title) ? $book_master->title : $request->title;
-            $book_master->author = is_null($request->author) ? $book_master->author : $request->author;
-            $book_master->status = is_null($request->status) ? $book_master->status : $request->status;
-            $book_master->memo = is_null($request->memo) ? $book_master->memo : $request->memo;
-            $book_master->save();
+        if(BookMaster::where('id', $id)->exists()) {
+          $book_master = BookMaster::find($id);
+          $book_master->title = is_null($request->title) ? $book_master->title : $request->title;
+          $book_master->author = is_null($request->author) ? $book_master->author : $request->author;
+          $book_master->status = is_null($request->status) ? $book_master->status : $request->status;
+          $book_master->memo = is_null($request->memo) ? $book_master->memo : $request->memo;
+          $book_master->save();
 
           return response()->json([
             "message" => "records updated successfully"
@@ -92,7 +92,7 @@ class ApiController extends Controller
           ], 404);
         }
       }
-
+    
       public function deleteBook($id) {
         if(BookMaster::where('id', $id)->exists()) {
           $book_master = BookMaster::find($id);
