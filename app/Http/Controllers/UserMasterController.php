@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\UserMaster;
 
 class UserMasterController extends Controller
 {
-    public function getAllUser() {
-      // logic to get all students goes here
+  
+    public function getAllUsers() {
+      $user_master = UserMaster::get()->toJson(JSON_PRETTY_PRINT);
+      return response($user_master, 200);
     }
   
     public function createUser(Request $request) {
@@ -23,7 +26,14 @@ class UserMasterController extends Controller
     }
   
     public function getUser($id) {
-      // logic to get a student record goes here
+      if(UserMaster::where('id', $id)->exists()) {
+        $user_master = UserMaster::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
+        return response($user_master, 200);
+      } else {
+        return response()->json([
+          "message" => "User not found"
+        ], 404);
+      }
     }
 }
 

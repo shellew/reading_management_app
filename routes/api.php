@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\ReadTimeController;
+use App\Http\Controllers\UserMasterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,8 @@ Route::delete('/book_masters/{id}', [ ApiController::class, 'deleteBook'] );
 
 // ReadTimeController
 Route::post('/read_times/', [ ReadTimeController::class, 'createReadTime']);
+
+//UserMasterController
+Route::get('/user_masters/', [ UserMasterController::class, 'getAllUsers'] );
+Route::get('/user_masters/{id}', [ UserMasterController::class, 'getUser'] );
+Route::post('/user_masters/', [ UserMasterController::class, 'createUser'] );
