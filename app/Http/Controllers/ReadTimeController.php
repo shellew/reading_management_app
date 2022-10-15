@@ -7,6 +7,21 @@ use App\Models\ReadTime;
 
 class ReadTimeController extends Controller
 {
+    //book_idのread_minuteの合計を出力
+    //SQL:select sum(read_minute) from read_times where book_id = 5;
+    //①ルーティングを作成
+    //②関数(getReadTime)を作成
+    //③$resultに値を出力
+    //④
+    public function getReadTime() {
+        $result = ReadTime::where('book_id', 5)
+                ->selectRaw('sum(read_minute)')
+                ->get();
+        
+        return response($result, 200);
+    }
+
+
     public function createReadTime(Request $request) {
         $read_time = new ReadTime;
         $read_time->book_id = $request->book_id;

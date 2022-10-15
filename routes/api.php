@@ -29,6 +29,7 @@ Route::put('/book_masters/{id}', [ ApiController::class, 'updateBook'] );
 Route::delete('/book_masters/{id}', [ ApiController::class, 'deleteBook'] );
 
 // ReadTimeController
+Route::get('/read_times/{id}', [ ReadTimeController::class, 'getReadTime']);
 Route::post('/read_times/', [ ReadTimeController::class, 'createReadTime']);
 
 //UserMasterController
