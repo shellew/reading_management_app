@@ -12,10 +12,9 @@ class ReadTimeController extends Controller
     //①ルーティングを作成
     //②関数(getReadTime)を作成
     //③$resultに値を出力
-    //④
     public function getReadTime() {
-        $result = ReadTime::where('book_id', 5)
-                ->selectRaw('sum(read_minute)')
+        $result = ReadTime::where('book_id', 8)
+                ->selectRaw('sum(read_minute) as totalTime')
                 ->get();
         
         return response($result, 200);
