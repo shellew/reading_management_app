@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        BookMaster::statement("ALTER TABLE book_masters MODIFY type ENUM ('読書中', '積読本', '読んだ', '読みたい')");
+        // BookMaster::statement("ALTER TABLE book_masters MODIFY type ENUM ('読書中', '積読本', '読んだ', '読みたい')");
     }
 
     /**
